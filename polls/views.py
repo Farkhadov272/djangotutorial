@@ -20,4 +20,6 @@ def results(request, question_id):
 
 
 def vote(request, question_id):
-    return HttpResponse(f"You are voting on question {question_id} lmao.")
+    question = get_object_or_404(Question, id=request.POST['choice'])
+
+    
